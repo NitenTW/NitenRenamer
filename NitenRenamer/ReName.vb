@@ -22,13 +22,13 @@
     End Function
 
     '序號
-    Public Function GetSerial(ByVal index As Decimal, ByVal aaa As Decimal, ByVal switch As Boolean) As String
+    Public Function GetSerial(ByVal index As Decimal, ByVal digits As Decimal, ByVal switch As Boolean) As String
         Dim result As String = index.ToString
 
         '補足位數
         If switch Then
-            result = 10 ^ aaa + result
-            result = Strings.Right(result, aaa)
+            result = 10 ^ digits + result
+            result = Strings.Right(result, digits)
         End If
 
         Return result
